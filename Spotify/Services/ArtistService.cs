@@ -9,19 +9,19 @@ namespace Spotify.Services
     {
         public void Add(Artist model)
         {
-            Sql.ExecCommand($"INSERT INTO Musics VALUES (N'{model.Name}', N'{model.Surname}', {model.Gender})");
+            Sql.ExecCommand($"INSERT INTO Artists VALUES (N'{model.Name}', N'{model.Surname}', N'{model.Brithday}', N'{model.Gender}')");
         }
         public void Delete(int id)
         {
-            Sql.ExecCommand($"DELETE Musics WHERE Id = {id}");
+            Sql.ExecCommand($"DELETE Artists WHERE Id = {id}");
         }
         public List<Artist> GetAll()
         {
-            DataTable dt = Sql.ExecQuery("SELECT * FROM Musics");
+            DataTable dt = Sql.ExecQuery("SELECT * FROM Artists");
             List<Artist> artists = new List<Artist>();
             foreach (DataRow dr in dt.Rows)
             {
-                artists.Add(new Artist { Id = Convert.ToInt32(dr["Id"]), Name = dr["Name"].ToString(), /*Duration = Convert.ToInt32(dr["Duration"]),*/ Gender = dr["Gender"].ToString() });
+                artists.Add(new Artist { Id = Convert.ToInt32(dr["Id"]), Name = dr["Name"].ToString(), Surname = dr["Surname"].ToString(), Brithday = dr["Brithday"].ToString(), Gender = dr["Gender"].ToString() });
             }
             return artists;
         }

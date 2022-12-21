@@ -5,7 +5,7 @@ namespace Spotify.Helper
 {
     static class Sql
     {
-        static string connectionString = "Server=DESKTOP-0D6QJVK\\SQLEXPRESS;Database=Spotifyadonet;Trusted_Connection=True";
+        static string connectionString = "Server=DESKTOP-0D6QJVK\\SQLEXPRESS;Database=SpotifyA;Trusted_Connection=True";
 
         static SqlConnection _connection;
 

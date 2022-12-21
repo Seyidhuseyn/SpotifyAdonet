@@ -21,7 +21,7 @@ namespace Spotify.Services
             List<Music> musics = new List<Music>();
             foreach (DataRow dr in dt.Rows)
             {
-                musics.Add(new Music {Id = Convert.ToInt32(dr["Id"]), Name = dr["Name"].ToString(), /*Duration = Convert.ToInt32(dr["Duration"]),*/ Categories = Convert.ToInt32(dr["Categories"]) });
+                musics.Add(new Music {Id = Convert.ToInt32(dr["Id"]), Name = dr["Name"].ToString(), Duration = (dr["Duration"]).ToString(), Categories = Convert.ToInt32(dr["Categories"]) });
             }
             return musics;
         }

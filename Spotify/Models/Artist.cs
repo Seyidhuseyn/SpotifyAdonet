@@ -6,6 +6,6 @@
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Gender { get; set; }
-        public TimeSpan Brithday { get; set; }
+        public string Brithday { get; set; }
     }
 }
